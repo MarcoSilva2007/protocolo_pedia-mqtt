@@ -1,0 +1,147 @@
+// HOME.SCSS — com fundo animado em ondas
+$alice-blue: #f0f8ff;
+$white: #ffffff;
+$primary: #3498db;
+$shadow: rgba(0, 0, 0, 0.06);
+$hover-shadow: rgba(0, 0, 0, 0.1);
+
+// Animação de onda suave
+@keyframes wave {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-banner {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  overflow: hidden;
+
+  // Camada de fundo animada
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: 
+      radial-gradient(circle at 10% 20%, rgba(52, 152, 219, 0.08) 0%, transparent 20%),
+      radial-gradient(circle at 90% 80%, rgba(52, 152, 219, 0.06) 0%, transparent 25%),
+      radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.7) 0%, transparent 30%);
+    background-size: 600px 600px;
+    animation: wave 25s ease-in-out infinite;
+    z-index: -2;
+  }
+
+  // Camada de cor de fundo base
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, $alice-blue 0%, $white 100%);
+    z-index: -1;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+
+    h1 {
+      font-size: 2.8em;
+      color: #2c3e50;
+      margin: 0 0 16px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .slogan {
+      font-size: 1.4em;
+      color: $primary;
+      font-weight: 500;
+      margin: 0;
+      padding: 12px 24px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 30px;
+      display: inline-block;
+      box-shadow: 0 4px 12px $shadow;
+      backdrop-filter: blur(4px);
+    }
+  }
+}
+
+.what-is-section {
+  max-width: 900px;
+  margin: 60px auto 0;
+  padding: 20px;
+
+  h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin: 32px 0 24px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .analogy-card {
+    background: $white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 6px 16px $shadow;
+    margin-bottom: 32px;
+
+    h3 {
+      color: $primary;
+      margin: 0 0 16px;
+      font-size: 1.3em;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 16px 0;
+
+      li {
+        margin: 8px 0;
+        color: #555;
+        font-size: 0.95em;
+
+        strong {
+          color: #2c3e50;
+          font-weight: 600;
+        }
+      }
+    }
+
+    p {
+      margin: 16px 0 0;
+      color: #555;
+      font-size: 0.95em;
+    }
+  }
+
+  .diagram-container {
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px $shadow;
+      margin: 20px 0;
+    }
+
+    .caption {
+      font-size: 0.9em;
+      color: #777;
+      margin: 0;
+      font-style: italic;
+    }
+  }
+}

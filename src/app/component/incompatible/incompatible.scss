@@ -1,0 +1,142 @@
+// INCOMPATIBLE.SCSS — com fundo animado
+$alice-blue: #f0f8ff;
+$white: #ffffff;
+$warning: #e74c3c;
+$shadow: rgba(0, 0, 0, 0.06);
+$hover-shadow: rgba(0, 0, 0, 0.1);
+
+@keyframes wave {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.incompatible-section {
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: 
+      radial-gradient(circle at 20% 70%, rgba(231, 76, 60, 0.05) 0%, transparent 25%),
+      radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.6) 0%, transparent 30%);
+    background-size: 600px 600px;
+    animation: wave 30s ease-in-out infinite;
+    z-index: -2;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, $alice-blue 0%, $white 100%);
+    z-index: -1;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    position: relative;
+    z-index: 1;
+
+    small {
+      display: block;
+      font-size: 1.25rem;
+      color: $warning;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .lead {
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    color: #555;
+    position: relative;
+    z-index: 1;
+  }
+
+  .scenarios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .scenario-card {
+    background: $white;
+    border-radius: 12px;
+    padding: 1.8rem;
+    max-width: 500px;
+    box-shadow: 0 4px 12px $shadow;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 4px solid $warning;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    h3 {
+      margin: 1.2rem 0 1rem;
+      color: #2c3e50;
+      font-size: 1.4rem;
+    }
+
+    p {
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    strong {
+      color: $warning;
+    }
+  }
+
+  .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #ffebee;
+    color: $warning;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .incompatible-section {
+    padding: 2.5rem 0;
+
+    .section-title {
+      font-size: 1.8rem;
+
+      small {
+        font-size: 1.1rem;
+      }
+    }
+
+    .scenarios {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

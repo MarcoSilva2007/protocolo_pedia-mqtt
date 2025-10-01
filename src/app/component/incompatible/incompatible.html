@@ -1,6 +1,8 @@
 <section class="incompatible-section">
   <div class="container">
-    <h2 class="section-title">⚠️ Alerta de Incompatibilidade<br><small>Onde NÃO usar o MQTT?</small></h2>
+    <h2 class="section-title">
+      ⚠️ Alerta de Incompatibilidade<br /><small>Onde NÃO usar o MQTT?</small>
+    </h2>
     <p class="lead text-center mb-5">
       Apesar de ser leve e eficiente, o MQTT <strong>não é adequado para todos os cenários</strong>.
       Veja onde ele pode ser uma má escolha:
@@ -12,10 +14,10 @@
         <div class="icon warning-icon">!</div>
         <h3>Comunicação Síncrona e Transações Críticas</h3>
         <p>
-          O MQTT é um protocolo <strong>assíncrono</strong> baseado em publicação/assinatura.
-          Ele <strong>não garante respostas imediatas</strong> após o envio de uma mensagem.
-          Por isso, é inadequado para sistemas que exigem confirmação instantânea,
-          como transações bancárias, chamadas de API REST ou operações de CRUD em aplicações web tradicionais.
+          O MQTT é um protocolo <strong>assíncrono</strong> baseado em publicação/assinatura. Ele
+          <strong>não garante respostas imediatas</strong> após o envio de uma mensagem. Por isso, é
+          inadequado para sistemas que exigem confirmação instantânea, como transações bancárias,
+          chamadas de API REST ou operações de CRUD em aplicações web tradicionais.
         </p>
         <p>
           Nesses casos, protocolos como <strong>HTTP/HTTPS</strong> são mais seguros e previsíveis.
@@ -27,15 +29,17 @@
         <div class="icon warning-icon">!</div>
         <h3>Aplicações Web Tradicionais com Alta Largura de Banda</h3>
         <p>
-          Em ambientes com dispositivos potentes, conexão estável e sem restrições de energia
-          (como um sistema interno corporativo), o MQTT adiciona <strong>complexidade desnecessária</strong>.
+          Em ambientes com dispositivos potentes, conexão estável e sem restrições de energia (como
+          um sistema interno corporativo), o MQTT adiciona
+          <strong>complexidade desnecessária</strong>.
         </p>
         <p>
-          Configurar um broker, gerenciar tópicos e lidar com QoS pode ser um overhead
-          quando soluções mais simples — como <strong>WebSockets</strong> ou até mesmo requisições HTTP —
+          Configurar um broker, gerenciar tópicos e lidar com QoS pode ser um overhead quando
+          soluções mais simples — como <strong>WebSockets</strong> ou até mesmo requisições HTTP —
           já resolvem o problema com menos infraestrutura.
         </p>
       </div>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/EIxdz-2rhLs?si=elIO84cH2eBhnk91&amp;start=6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   </div>
 </section>
